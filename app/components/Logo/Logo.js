@@ -1,13 +1,11 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-const Logo = () => {
+const Logo = () => (
   <View>
-    <Image>
-      <Image source={require("./image/logo.png")} />
-    </Image>
+    <Image source={require("./image/logo.png")} />
     <Text>Currency Converter</Text>
-  </View>;
-};
+  </View>
+);
 
 export default Logo;

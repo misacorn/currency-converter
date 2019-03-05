@@ -8,7 +8,7 @@ const Container = ({ children }) => (
 );
 
 Container.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.arrayOf(PropTypes.element)
 };
 
 export default Container;
