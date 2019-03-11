@@ -12,5 +12,11 @@ export default EStyleSheet.create({
     justifyContent: "center",
     width: imageWidth,
     height: imageWidth
+  },
+  text: {
+    fontWeight: "600",
+    fontSize: 28,
+    letterSpacing: -0.5,
+    color: "$white"
   }
 });

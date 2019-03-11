@@ -6,10 +6,10 @@ const Logo = () => (
   <View style={styles.container}>
     <Image
       style={styles.containerImg}
-      // style={{ width: 250, height: 250 }}
+      // resizeModel="contain"
       source={require("./image/logo.png")}
     />
-    <Text>Currency Converter</Text>
+    <Text style={styles.text}>Currency Converter</Text>
   </View>
 );
 
