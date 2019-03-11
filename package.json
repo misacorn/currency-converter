@@ -26,5 +26,18 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4"
   },
-  "private": true
+  "private": true,
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misacorn/currency-converter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misacorn/currency-converter/issues"
+  },
+  "homepage": "https://github.com/misacorn/currency-converter#readme",
+  "description": ""
 }
