@@ -14,12 +14,16 @@ export default EStyleSheet.create({
     marginVertical: 11,
     alignItems: "center"
   },
+  containerDisabled: {
+    backgroundColor: "$disabled"
+  },
   buttonContainer: {
     height: INPUT_HEIGHT,
     alignItems: "center",
     justifyContent: "center",
     borderTopLeftRadius: BORDER_RADIUS,
-    borderBottomLeftRadius: BORDER_RADIUS
+    borderBottomLeftRadius: BORDER_RADIUS,
+    backgroundColor: "$white"
   },
   buttonText: {
     fontWeight: "600",
