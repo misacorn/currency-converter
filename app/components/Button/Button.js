@@ -4,7 +4,7 @@ import { TouchableOpacity, View, Text, Image } from "react-native";
 
 import styles from "./styles";
 
-const ClearButton = props => {
+const Button = props => {
   const { onPress, text } = props;
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
@@ -20,9 +20,9 @@ const ClearButton = props => {
   );
 };
 
-ClearButton.propTypes = {
+Button.propTypes = {
   onPress: propTypes.func,
   text: propTypes.string
 };
 
-export default ClearButton;
+export default Button;
