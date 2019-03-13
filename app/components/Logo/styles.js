@@ -15,7 +15,8 @@ export default EStyleSheet.create({
   },
   text: {
     fontWeight: "600",
-    fontSize: 28,
+    fontSize: 30,
+    marginBottom: 15,
     letterSpacing: -0.5,
     color: "$white"
   }

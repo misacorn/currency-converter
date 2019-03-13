@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://hw-hy4.anonymous.currency-converter.exp.direct",
+  "packagerNgrokUrl": "https://packager.hw-hy4.anonymous.currency-converter.exp.direct",
+  "ngrokPid": 11811,
   "webpackServerPort": null
 }
