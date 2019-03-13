@@ -6,6 +6,7 @@ import Logo from "../components/Logo/Logo";
 import InputWithButton from "../components/TextInput/InputWithButton";
 import Button from "../components/Button/Button";
 import ConvertRate from "../components/ConvertRate/ConvertRate";
+import Header from "../components/Header/Header";
 
 const TEMP_BASE_CURRENCY = "EUR";
 const TEMP_QUOTE_CURRENCY = "USD";
@@ -31,10 +32,15 @@ class Home extends Component {
     console.log("reverse currencies");
   };
 
+  handleOptionPress = () => {
+    console.log("press option");
+  };
+
   render() {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
+        <Header onPress={this.handleOptionPress} />
         <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
