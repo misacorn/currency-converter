@@ -1,8 +1,14 @@
 import React, { Component } from "react";
-import { View, Text, Image, Keyboard } from "react-native";
+import { View, Text, Keyboard, Animated } from "react-native";
 import styles from "./styles";
 
+const ANIMATION_DURATION = 250;
+
 class Logo extends Component {
+  constructor(props) {
+    super(props);
+    this.imageWidth = new Animated.Value(styles.$largeImageSize);
+  }
   componentDidMount() {
     this.keyboardShowListener = Keyboard.addListener(
       "keyboardWillShow",
@@ -20,18 +26,29 @@ class Logo extends Component {
   }
 
   keyboardShow = () => {
-    console.log("keyboard did show");
+    Animated.timing(this.imageWidth, {
+      toValue: styles.$smallImageSize,
+      duration: ANIMATION_DURATION
+    }).start();
   };
 
   keyboardHide = () => {
-    console.log("keyboard did hide");
+    Animated.timing(this.imageWidth, {
+      toValue: styles.$largeImageSize,
+      duration: ANIMATION_DURATION
+    }).start();
   };
 
   render() {
+    const imageStyle = [
+      styles.logo,
+      { width: this.imageWidth, height: this.imageWidth }
+    ];
+
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.containerImg}
+        <Animated.Image
+          style={imageStyle}
           // resizeModel="contain"
           source={require("./image/logo.png")}
         />
