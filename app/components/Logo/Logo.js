@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Keyboard, Animated } from "react-native";
+import { View, Text, Keyboard, Animated, Platform } from "react-native";
 import styles from "./styles";
 
 const ANIMATION_DURATION = 250;
@@ -10,12 +10,16 @@ class Logo extends Component {
     this.imageWidth = new Animated.Value(styles.$largeImageSize);
   }
   componentDidMount() {
+    let showListener = "keyboardWillShow";
+    let hideListener = "keyboardWillHide";
+    Platform.OS === "android" &&
+      ((showListener = "keyboardDidShow"), (hideListener = "keyboardDidHide"));
     this.keyboardShowListener = Keyboard.addListener(
-      "keyboardWillShow",
+      showListener,
       this.keyboardShow
     );
     this.keyboardHideListerner = Keyboard.addListener(
-      "keyboardWillHide",
+      hideListener,
       this.keyboardHide
     );
   }
