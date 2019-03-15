@@ -5,7 +5,7 @@ import currencies from "../components/data/currencies";
 import ListItem from "../components/List/ListItem";
 import Separator from "../components/List/Separator";
 
-const TEMP_CURRENT_CURRENCY = "EUR";
+const TEMP_CURRENT_CURRENCY = "AUD";
 
 class CurrencyList extends Component {
   currencySelect = () => console.log("currency selected");
@@ -13,7 +13,7 @@ class CurrencyList extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar translucent={false} barStyle="default" />
+        <StatusBar translucent={false} barStyle="light-content" />
         <FlatList
           data={currencies}
           renderItem={({ item }) => (
