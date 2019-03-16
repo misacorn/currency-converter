@@ -4,9 +4,10 @@ import { View, Image } from "react-native";
 
 import styles from "./styles";
 
-const Icon = ({ checkmark, visible }) => {
+const Icon = ({ visible, checkmark, iconBackground }) => {
   const iconStyles = [styles.icon];
   visible && iconStyles.push(styles.iconVisible);
+  iconBackground && iconStyles.push({ backgroundColor: iconBackground });
 
   return (
     <View style={iconStyles}>
@@ -23,7 +24,8 @@ const Icon = ({ checkmark, visible }) => {
 
 Icon.propTypes = {
   checkmark: propTypes.bool,
-  visible: propTypes.bool
+  visible: propTypes.bool,
+  iconBackground: propTypes.string
 };
 
 export default Icon;

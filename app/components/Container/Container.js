@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import { View } from "react-native";
 import styles from "./styles";
 
@@ -8,7 +8,7 @@ const Container = ({ children }) => (
 );
 
 Container.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element)
+  children: propTypes.arrayOf(propTypes.element)
 };
 
 export default Container;

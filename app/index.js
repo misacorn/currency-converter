@@ -11,7 +11,9 @@ EStyleSheet.build({
   $border: "#E2E2E2",
   $inputText: "#797979",
   $disabled: "#F0F0F0",
-  $darkText: "#343434"
+  $darkText: "#343434",
+  $primaryOrange: "#ff7400",
+  $primaryGreen: "#329932"
 
   // $outline: 1
 });
