@@ -1,8 +1,9 @@
 import React from "react";
 import EStyleSheet from "react-native-extended-stylesheet";
+import { Provider } from "react-redux";
 
+import Navigator from "./config/routes";
 // import Home from "./screens/Home";
-import CurrencyList from "./screens/CurrencyList";
 
 EStyleSheet.build({
   $primaryColor: "#a537fd",
@@ -15,4 +16,4 @@ EStyleSheet.build({
   // $outline: 1
 });
 
-export default () => <CurrencyList />;
+export default () => <Navigator />;

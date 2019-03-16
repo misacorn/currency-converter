@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FlatList, View, StatusBar } from "react-native";
+import propTypes from "prop-types";
 
 import currencies from "../components/data/currencies";
 import ListItem from "../components/List/ListItem";
@@ -8,7 +9,14 @@ import Separator from "../components/List/Separator";
 const TEMP_CURRENT_CURRENCY = "AUD";
 
 class CurrencyList extends Component {
-  currencySelect = () => console.log("currency selected");
+  static propTypes = {
+    navigation: propTypes.object
+  };
+
+  currencySelect = () => {
+    const { navigation } = this.props;
+    navigation.goBack(null);
+  };
 
   render() {
     return (
