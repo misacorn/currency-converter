@@ -8,6 +8,8 @@ import Button from "../components/Button/Button";
 import ConvertRate from "../components/ConvertRate/ConvertRate";
 import Header from "../components/Header/Header";
 
+import { changeCurrencyAmount, swapCurrency } from "../actions/currencies";
+
 const TEMP_BASE_CURRENCY = "EUR";
 const TEMP_QUOTE_CURRENCY = "USD";
 const TEMP_BASE_PRICE = "1";
@@ -21,15 +23,15 @@ class Home extends Component {
   };
 
   handleQuoteCurrency = () => {
-    console.log("quote");
+    console.log();
   };
 
-  handleChangeText = text => {
-    console.log("change text");
+  handleChangeText = amount => {
+    console.log(changeCurrencyAmount(amount));
   };
 
-  handleReverse = () => {
-    console.log("reverse currencies");
+  handleSwap = () => {
+    console.log(swapCurrency());
   };
 
   handleOptionPress = () => {
@@ -62,7 +64,7 @@ class Home extends Component {
             date={TEMP_CONVERSION_DATE}
             conversionRate={TEMP_CONVERSION_RATE}
           />
-          <Button text="Reverse Currencies" onPress={this.handleReverse} />
+          <Button text="Reverse Currencies" onPress={this.handleSwap} />
         </KeyboardAvoidingView>
       </Container>
     );
