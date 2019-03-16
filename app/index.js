@@ -3,7 +3,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import { Provider } from "react-redux";
 
 import Navigator from "./config/routes";
-// import Home from "./screens/Home";
+import AlertProvider from "./components/Alert/AlertProvider";
 
 EStyleSheet.build({
   $primaryColor: "#a537fd",
@@ -18,4 +18,8 @@ EStyleSheet.build({
   // $outline: 1
 });
 
-export default () => <Navigator />;
+export default () => (
+  <AlertProvider>
+    <Navigator />
+  </AlertProvider>
+);
