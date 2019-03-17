@@ -31,12 +31,18 @@ class Home extends Component {
 
   handleBaseCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate("CurrencyList", { title: "Base Currency" });
+    navigation.navigate("CurrencyList", {
+      title: "Base Currency",
+      type: "base"
+    });
   };
 
   handleQuoteCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate("CurrencyList", { title: "Quote Currency" });
+    navigation.navigate("CurrencyList", {
+      title: "Quote Currency",
+      type: "quote"
+    });
   };
 
   handleSwap = () => {
