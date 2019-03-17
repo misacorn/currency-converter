@@ -1,19 +1,28 @@
 import React, { Component } from "react";
 import { FlatList, View, StatusBar } from "react-native";
 import propTypes from "prop-types";
+import { connect } from "react-redux";
 
 import currencies from "../components/data/currencies";
 import ListItem from "../components/List/ListItem";
 import Separator from "../components/List/Separator";
+import { changeBaseCurrency, changeQuoteCurrency } from "../actions/currencies";
 
 const TEMP_CURRENT_CURRENCY = "AUD";
 
 class CurrencyList extends Component {
   static propTypes = {
-    navigation: propTypes.object
+    navigation: propTypes.object,
+    dispatch: propTypes.func
   };
 
-  currencySelect = () => {
+  currencySelect = currency => {
+    const { type } = this.props.navigation.state.params;
+    type === "base"
+      ? this.props.dispatch(changeBaseCurrency(currency))
+      : type === "quote"
+      ? this.props.dispatch(changeQuoteCurrency(currency))
+      : null;
     const { navigation } = this.props;
     navigation.goBack(null);
   };
@@ -28,7 +37,7 @@ class CurrencyList extends Component {
             <ListItem
               text={item}
               selected={item === TEMP_CURRENT_CURRENCY}
-              onPress={this.currencySelect}
+              onPress={() => this.currencySelect(currency)}
             />
           )}
           keyExtractor={item => item}
@@ -39,4 +48,4 @@ class CurrencyList extends Component {
   }
 }
 
-export default CurrencyList;
+export default connect()(CurrencyList);
