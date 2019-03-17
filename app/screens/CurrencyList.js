@@ -8,8 +8,6 @@ import ListItem from "../components/List/ListItem";
 import Separator from "../components/List/Separator";
 import { changeBaseCurrency, changeQuoteCurrency } from "../actions/currencies";
 
-const TEMP_CURRENT_CURRENCY = "AUD";
-
 class CurrencyList extends Component {
   static propTypes = {
     navigation: propTypes.object,
@@ -19,20 +17,24 @@ class CurrencyList extends Component {
   };
 
   currencySelect = currency => {
-    const { type } = this.props.navigation.state.params;
-    type === "base"
-      ? this.props.dispatch(changeBaseCurrency(currency))
-      : type === "quote"
-      ? this.props.dispatch(changeQuoteCurrency(currency))
-      : null;
-    const { navigation } = this.props;
+    const { navigation, dispatch } = this.props;
+    const { type } = navigation.state.params;
+    if (type === "base") {
+      dispatch(changeBaseCurrency(currency));
+    } else if (type === "quote") {
+      dispatch(changeQuoteCurrency(currency));
+    }
+
     navigation.goBack(null);
   };
 
   render() {
-    const compareCurrency = this.props.baseCurrency;
-    this.props.navigation.state.params.type == "quote" &&
-      compareCurrency == this.props.quoteCurrency;
+    const { baseCurrency, quoteCurrency, navigation } = this.props;
+    let compareCurrency = baseCurrency;
+    if (navigation.state.params.type === "quote") {
+      compareCurrency = quoteCurrency;
+    }
+
     return (
       <View style={{ flex: 1 }}>
         <StatusBar translucent={false} barStyle="light-content" />
