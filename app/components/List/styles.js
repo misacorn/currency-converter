@@ -31,7 +31,7 @@ export default EStyleSheet.create({
     justifyContent: "center"
   },
   iconVisible: {
-    backgroundColor: "$primaryColor"
+    backgroundColor: "$primaryPurple"
   },
   checkIcon: {
     width: 18

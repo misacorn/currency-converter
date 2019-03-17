@@ -28,7 +28,7 @@ export default EStyleSheet.create({
   buttonText: {
     fontWeight: "600",
     fontSize: 20,
-    color: "$primaryColor",
+    color: "$primaryPurple",
     paddingHorizontal: 16
   },
   input: {

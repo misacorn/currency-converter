@@ -7,7 +7,7 @@ import ListItem from "../components/List/ListItem";
 import Separator from "../components/List/Separator";
 
 const styles = EStyleSheet.create({
-  $purple: "$primaryColor",
+  $purple: "$primaryPurple",
   $orange: "$primaryOrange",
   $green: "$primaryGreen"
 });
